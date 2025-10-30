@@ -15,8 +15,7 @@ public class safePayController {
     private final safePayService safePayService;
 
     @GetMapping("/safe-pay/{email}")
-    public ResponseEntity<SafePayResponse> getSafePayUserId(@PathVariable String email) {
-        SafePayResponse safePayUserId = safePayService.GetSafePayUserId(email);
-        return ResponseEntity.status(HttpStatus.OK).body(safePayUserId);
+    public SafePayResponse getSafePayUserId(@PathVariable String email) {
+        return safePayService.GetSafePayUserId(email);
     }
 }
